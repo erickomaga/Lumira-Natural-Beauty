@@ -35,14 +35,28 @@
     .slider img {
       transition: opacity 0.5s ease-in-out;
     }
+
     .prev, .next {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .slider:hover .prev,
-    .slider:hover .next {
       opacity: 1;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: rgba(212, 163, 115, 0.8);
+      color: white;
+      border-radius: 9999px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      z-index: 10;
     }
+    .prev:hover, .next:hover {
+      background-color: #BF9264;
+      transform: scale(1.1);
+    }
+    .prev::before { content: "‹"; }
+    .next::before { content: "›"; }
 
     @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
     @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
@@ -59,7 +73,7 @@
     .reveal.visible { opacity:1; transform:translateY(0); }
 
     .hero {
-      background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://placehold.co/1920x1080/F8F5F2/4A4A4A?text=Lumira'); <!--Anim Texto Lumira titulo-->
+      background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://placehold.co/1920x1080/F8F5F2/4A4A4A?text=Lumira');
       background-size: 150% auto;
       background-position: center;
       animation: backgroundPan 20s infinite linear;
@@ -110,6 +124,7 @@
       outline: none;
     }
   </style>
+
 </head>
 <body class="antialiased">
 
@@ -128,7 +143,7 @@
   <section class="hero h-screen flex items-center justify-center text-white text-center">
     <div class="max-w-3xl mx-auto px-4">
       <h1 class="text-5xl md:text-7xl font-serif font-extrabold mb-4 animate-fade-in">Lumira - Natural Beauty</h1>
-      <p class="text-lg md:text-xl mb-8 animate-fade-in">Texto de apresentação ou Slogan(acho que serve)</p>
+      <p class="text-lg md:text-xl mb-8 animate-fade-in">Beleza natural, brilho verdadeiro.</p>
       <a href="#products" class="btn-primary animate-fade-in-up">Explore o nosso catálogo</a>
     </div>
   </section>
@@ -145,30 +160,30 @@
       <!-- Produto 1-->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         <div class="product-card reveal">
-          <img src="Img/Products/Produto 1.png" class="w-full h-64 object-cover">
+          <img src="Img/Products/Mascara para cabelo.png" class="w-full h-64 object-cover">
           <div class="p-6">
             <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Máscara para Cabelo</h3>
-            <p class="text-gray-600 mb-4">Pequena descrição.</p>
+            <p class="text-gray-600 mb-4">Nutre profundamente os fios, devolvendo maciez, brilho e força.<br> Ideal para revitalizar cabelos danificados e ressecados.</p>
             <span class="text-xl font-bold text-[#D4A373]">R$111,80</span>
           </div>
         </div>
 
         <!--Produto 2-->
         <div class="product-card reveal">
-          <img src="Img/Products/Produto 2.png" class="w-full h-64 object-cover">
+          <img src="Img/Products/Oleo para cabelo.png" class="w-full h-64 object-cover">
           <div class="p-6">
             <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Óleo para Cabelo</h3>
-            <p class="text-gray-600 mb-4">Pipipi popopó</p>
+            <p class="text-gray-600 mb-4">Proporciona hidratação intensa, reduz o frizz e realça o brilho natural dos fios sem deixá-los pesados.</p>
             <span class="text-xl font-bold text-[#D4A373]">R$53,99</span>
           </div>
         </div>
 
         <!--Produto 3-->
         <div class="product-card reveal">
-          <img src="Img/Products/Produto 3.png" class="w-full h-64 object-cover">
+          <img src="Img/Products/serum.png" class="w-full h-64 object-cover">
           <div class="p-6">
             <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Sérum</h3>
-            <p class="text-gray-600 mb-4">Blá blá</p>
+            <p class="text-gray-600 mb-4">Cria uma camada protetora nos fios, selando as pontas e deixando o cabelo mais suave, alinhado e luminoso.</p>
             <span class="text-xl font-bold text-[#D4A373]">R$100,90</span>
           </div>
         </div>
@@ -193,7 +208,7 @@
 
         <!--Produto 5-->
         <div class="product-card reveal">
-          <img src="Img/Products/Esfera.jpg" class="w-full h-64 object-cover">
+          <img src="Img/Products/Esfera.png" class="w-full h-64 object-cover">
           <div class="p-6">
             <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Esferas Efervescentes</h3>
             <p class="text-gray-600 mb-4">Opções de: Menta, Bambu, Rosas vemelhas, Canela, Capim Limão, Cereja e Avelã, Lavanda e Baunilha</p>
@@ -204,22 +219,22 @@
 
         <!--Produto 6-->
         <div class="product-card reveal">
-          <img src="Img/Products/Produto 6.png" class="w-full h-64 object-cover">
+          <img src="Img/Products/Esponja.png" class="w-full h-64 object-cover">
           <div class="p-6">
             <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Esponja</h3>
-            <p class="text-gray-600 mb-4">Descrição</p>
+            <p class="text-gray-600 mb-4">Macia e prática, remove impurezas e proporciona uma limpeza suave e revigorante para a pele.</p>
             <span class="text-xl font-bold text-[#D4A373]">R$7,27</span>
           </div>
         </div>
 
         <!-- Produtos Visiveis Depois -->
-        
+
         <!--Produto 7-->
         <div class="product-card reveal hidden extra-product">
-          <img src="Img/Products/Produto 7.png" class="w-full h-64 object-cover rounded-t-lg">
+          <img src="Img/Products/Incenso.png" class="w-full h-64 object-cover rounded-t-lg">
           <div class="p-6">
             <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Incenso</h3>
-            <p class="text-gray-600 mb-4">Descrição.</p>
+            <p class="text-gray-600 mb-4">Perfuma o ambiente e traz sensação de paz e bem-estar, transformando qualquer espaço em um refúgio de boas energias.</p>
             <span class="text-xl font-bold text-[#D4A373]">R$35,99 - Kit 15 Unidades</span>
           </div>
         </div>
@@ -246,10 +261,10 @@
 
         <!--Produto 9-->
         <div class="product-card reveal hidden extra-product">
-          <img src="Img/Products/Produto 9.png" class="w-full h-64 object-cover rounded-t-lg">
+          <img src="Img/Products/Gelatina para Cabelo.png" class="w-full h-64 object-cover rounded-t-lg">
           <div class="p-6">
             <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Gelatina de Cabelo</h3>
-            <p class="text-gray-600 mb-4">Descrição.</p>
+            <p class="text-gray-600 mb-4">Define os cachos e controla o frizz<br> deixando o cabelo com movimento natural e brilho intenso.</p>
             <span class="text-xl font-bold text-[#D4A373]">Grande: R$38,99</span><br>
             <span class="text-xl font-bold text-[#D4A373]">Média: R$25,90</span>
           </div>
@@ -257,20 +272,20 @@
 
         <!--Produto 10-->
         <div class="product-card reveal hidden extra-product">
-          <img src="Img/Products/Produto 10.png" class="w-full h-64 object-cover rounded-t-lg">
+          <img src="Img/Products/Finalizador.png" class="w-full h-64 object-cover rounded-t-lg">
           <div class="p-6">
             <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Finalizador</h3>
-            <p class="text-gray-600 mb-4">Descrição.</p>
+            <p class="text-gray-600 mb-4">Hidrata, desembaraça e protege os fios,<br> garantindo um acabamento perfeito e controle duradouro.</p>
             <span class="text-xl font-bold text-[#D4A373]">R$24,90</span>
           </div>
         </div>
 
         <!--Produto 11-->
         <div class="product-card reveal hidden extra-product">
-          <img src="Img/Products/Produto 11.png" class="w-full h-64 object-cover rounded-t-lg">
+          <img src="Img/Products/Protetor termico.png" class="w-full h-64 object-cover rounded-t-lg">
           <div class="p-6">
             <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Protetor Térmico</h3>
-            <p class="text-gray-600 mb-4">Descrição.</p>
+            <p class="text-gray-600 mb-4">Cria uma barreira protetora contra o calor do secador e da chapinha,<br> mantendo os fios saudáveis e brilhantes.</p>
             <span class="text-xl font-bold text-[#D4A373]">R$58,40</span>
           </div>
         </div>
@@ -288,7 +303,7 @@
 
         <!--Produto 13-->
         <div class="product-card reveal hidden extra-product">
-          <img src="Img/Products/Produto 13.png" class="w-full h-64 object-cover rounded-t-lg">
+          <img src="Img/Products/Desodorante em barra.png" class="w-full h-64 object-cover rounded-t-lg">
           <div class="p-6">
             <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Desodorante em Barra</h3>
             <p class="text-gray-600 mb-4">Opções de: Lavanda, Algodão, Jasmine, Frutas Vermelhas e Flor de Laranjeira</p>
@@ -309,9 +324,45 @@
           </div>
             <div class="p-6">
               <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Desodorante Aerosol</h3>
-              <p class="text-gray-600 mb-4">Descrição.</p>
+              <p class="text-gray-600 mb-4">Protege contra o suor e o mau odor por até 48 horas,<br> deixando uma sensação de frescor e leveza o dia todo.</p>
               <span class="text-xl font-bold text-[#D4A373]">R$15,22</span>
             </div>
+        </div>
+
+        <!--Produto 15-->
+        <div class="product-card reveal hidden extra-product">
+          <div class="relative slider rounded-t-lg overflow-hidden h-64">
+              <img src="Img/Products/Sabonetes L/1.jpg" class="w-full h-64 object-cover rounded-t-lg">
+              <img src="Img/Products/Sabonetes L/2.jpg" class="w-full h-64 object-cover rounded-t-lg">
+              <img src="Img/Products/Sabonetes L/3.jpg" class="w-full h-64 object-cover rounded-t-lg">
+              <img src="Img/Products/Sabonetes L/4.jpg" class="w-full h-64 object-cover rounded-t-lg">
+              <img src="Img/Products/Sabonetes L/5.jpg" class="w-full h-64 object-cover rounded-t-lg">
+              <button class="prev absolute top-1/2 left-2 -translate-y-1/2 bg-[#D4A373]/70 text-white p-2 rounded-full hover:bg-[#BF9264]"></button>
+              <button class="next absolute top-1/2 right-2 -translate-y-1/2 bg-[#D4A373]/70 text-white p-2 rounded-full hover:bg-[#BF9264]"></button>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Sabonete Líquido</h3>
+              <p class="text-gray-600 mb-4">Limpa suavemente sem 5, deixando a pele hidratada, macia e perfumada.</p>
+              <span class="text-xl font-bold text-[#D4A373]">R$--,--</span>
+            </div>
+        </div>
+
+         <!--Produto 16-->
+        <div class="product-card reveal hidden extra-product">
+            <div class="relative slider rounded-t-lg overflow-hidden h-64">
+              <img src="Img/Products/Sabonetes B/1.jpg" class="w-full h-64 object-cover rounded-t-lg">
+              <img src="Img/Products/Sabonetes B/2.jpg" class="w-full h-64 object-cover rounded-t-lg">
+              <img src="Img/Products/Sabonetes B/3.jpg" class="w-full h-64 object-cover rounded-t-lg">
+              <img src="Img/Products/Sabonetes B/4.jpg" class="w-full h-64 object-cover rounded-t-lg">
+              <img src="Img/Products/Sabonetes B/5.jpg" class="w-full h-64 object-cover rounded-t-lg">
+              <button class="prev absolute top-1/2 left-2 -translate-y-1/2 bg-[#D4A373]/70 text-white p-2 rounded-full hover:bg-[#BF9264]"></button>
+              <button class="next absolute top-1/2 right-2 -translate-y-1/2 bg-[#D4A373]/70 text-white p-2 rounded-full hover:bg-[#BF9264]"></button>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-serif font-semibold mb-2 text-gray-800">Sabonete em Barra</h3>
+              <p class="text-gray-600 mb-4">Faz uma limpeza eficaz e delicada, com espuma cremosa e fragrância duradoura.</p>
+              <span class="text-xl font-bold text-[#D4A373]">R$--,--</span>
+          </div>
         </div>
 
       </div>
@@ -329,7 +380,7 @@
         <div class="lg:w-1/2 text-center lg:text-left reveal">
           <h2 class="text-4xl font-serif font-bold text-gray-800">Lumira Natural Beauty</h2>
           <p class="text-lg text-gray-600 mt-6 mb-4">Na Lumira, acreditamos que a verdadeira beleza é um reflexo da saúde...</p>
-          <p class="text-lg text-gray-600">Texto 2</p>
+          <p class="text-lg text-gray-600">Por isso, cada produto é desenvolvido com ingredientes cuidadosamente selecionados da natureza, promovendo equilíbrio, bem-estar e autocuidado.</p>
         </div>
       </div>
     </section>
@@ -380,7 +431,7 @@
   </footer>
 
   <script>
-    // Animação
+    // Animação 
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -391,15 +442,13 @@
 
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) header.classList.add('shadow-md');
-      else header.classList.remove('shadow-md');
+      header.classList.toggle('shadow-md', window.scrollY > 50);
     });
 
-    // Botão ver Mais
+    // Botão Ver Mais
     const btn = document.getElementById('showMoreBtn');
     const extras = document.querySelectorAll('.extra-product');
     let expanded = false;
-
     btn.addEventListener('click', () => {
       expanded = !expanded;
       extras.forEach(el => el.classList.toggle('hidden', !expanded));
@@ -411,22 +460,48 @@
       const nextBtn = slider.querySelector('.next');
       const prevBtn = slider.querySelector('.prev');
       let index = 0;
+      let interval;
 
       const showImage = (i) => {
         imgs.forEach((img, idx) => img.classList.toggle('hidden', idx !== i));
       };
+      showImage(index);
 
-      showImage(index); 
-
-      nextBtn.addEventListener('click', () => {
+      const nextImage = () => {
         index = (index + 1) % imgs.length;
         showImage(index);
-      });
-
-      prevBtn.addEventListener('click', () => {
+      };
+      const prevImage = () => {
         index = (index - 1 + imgs.length) % imgs.length;
         showImage(index);
+      };
+
+      nextBtn.addEventListener('click', () => {
+        nextImage();
+        restartAutoplay();
       });
+      prevBtn.addEventListener('click', () => {
+        prevImage();
+        restartAutoplay();
+      });
+
+      // autoplay a cada 3 segundos
+      const startAutoplay = () => interval = setInterval(nextImage, 3000);
+      const stopAutoplay = () => clearInterval(interval);
+      const restartAutoplay = () => { stopAutoplay(); startAutoplay(); };
+
+      startAutoplay();
+
+      // pausa ao passar o mouse
+      slider.addEventListener('mouseenter', stopAutoplay);
+      slider.addEventListener('mouseleave', startAutoplay);
+    });
+
+    // Envio de contato
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Mensagem enviada com sucesso, agradecemos o seu FeedBack!');
+      this.reset(); 
     });
   </script>
 
